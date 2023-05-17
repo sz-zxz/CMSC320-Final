@@ -1,0 +1,42 @@
+body {background-color: powderblue;}
+h1   {
+    color: blue;
+    text-align: center;
+}
+
+p    {
+    color: brown;
+}
+
+#joke{
+    border: 3px ridge brown;
+    text-align: center;
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    font-size: large;
+}
+.column {
+    float: left;
+    width: 20%;
+    padding: 5px;
+}
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#rank{
+    font-size: 30px;
+}
+
+#advanceList{
+    font-size: 30px;
+}
+
+#vote{
+    font-size: 40px;
+}

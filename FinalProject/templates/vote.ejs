@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title> Order Form</title>
+
+    <style>
+        body {
+			background-color: powderblue;
+			font-size: 20px;
+			
+		}
+        h1   {
+            color: blue;
+            text-align: center;
+        }
+        p    {color: red;}
+
+		#resetAndSubmit{
+			text-align: center;
+		}
+
+		legend{
+			font-size: 25px;
+		}
+
+		.column {
+            float: left;
+            width: 20%;
+            padding: 5px;
+        }
+
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+</head>
+
+<script>
+	function userConfirm(form) {
+		return window.confirm('Are you sure you want to submit your application? \nYou will not be able to change your information once submitted.');
+	}
+</script>
+
+<body>
+	<h1>Voting</h1>
+	<form action="http://localhost:<%- portNum %>/voteData" method="post" onsubmit="userConfirm(this);">
+		<fieldset>
+            <fieldset>
+				<legend>Personal Information</legend>
+				<label>Name: <input type="text" name="name"></label>
+				<label>Email Address: <input type="email" name="email"></label>
+			</fieldset>
+
+			<fieldset>
+				<legend>3 Votes total</legend>
+				<label>First Pick: <input type="text" name="first"></label>
+                <label>Second Pick: <input type="text" name="second"></label>
+                <label>Third Pick: <input type="text" name="third"></label>
+			</fieldset>
+			
+
+            <br>
+            <br>
+            <fieldset>
+                <legend>Choose your favorite among the top 3 we have currently</legend>
+
+                <input name = "top1" id = "top1" type = "radio" value = "Urgot">
+                Urgot
+				<div class="row">
+					<div class="column">
+						<img
+						src="/photos/TFT_Set8_Urgot.jpg"
+						width="350" height="250"
+						alt="Urgot"
+					  />
+					</div>
+				</div>
+                <br>
+                <input name = "top2" id = "top2" type = "radio" value = "Syndra">
+                Syndra
+				<div class="row">
+					<div class="column">
+						<img
+						src="/photos/Syndra.jpg"
+						width="350" height="250"
+						alt="Syndra"
+					  />
+					</div>
+				</div>
+                <br>
+                <input name = "top3" id = "top3" type = "radio" value = "Garen">
+                Garen
+				<div class="row">
+					<div class="column">
+						<img
+						src="/photos/Garen.jpg"
+						width="350" height="250"
+						alt="Garen"
+					  />
+					</div>
+				</div>
+
+            </fieldset>
+        
+			<br>
+			<label>Additional Information: <br> <textarea rows="6" cols="70" name="additional"></textarea></label>
+
+		</fieldset>
+		<br>
+
+		<div id = "resetAndSubmit">
+			<input type="reset" />
+			<input type="submit" value="Submit Order"/>
+		</div>
+		
+	</form>
+	<hr>
+	<a href="http://localhost:<%- portNum%>/">HOME</a>
+</body>
+
+</html>

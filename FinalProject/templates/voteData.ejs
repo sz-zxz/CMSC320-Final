@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Order Confirmation</title>
+
+    <style>
+        body {
+            background-color: powderblue;
+            font-size: 20px;
+        }
+        h1   {
+            color: blue;
+            text-align: center;
+        }
+        p    {color: red;}
+
+        #center{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+	<h1>Vote Details</h1>
+	<div>
+		<strong>Name: </strong><%- name %><br>
+        <strong>Email: </strong><%- email %><br>
+
+        <hr>
+		<strong>First Pick: </strong><%- first %><br>
+        <strong>Second Pick: </strong><%- second %><br>
+        <strong>Third Pick: </strong><%- third %><br>
+		<strong>Your favorite among the current Top 3 champions: </strong><%- topPicSelection %><br>
+        <hr>
+
+        <br>
+        <strong>Additional Information: </strong><br>
+		<%- additional %><br>
+
+        <br>
+        <div id = "center">
+            <strong>Vote Submitted!! <%= new Date();%></strong>
+        </div>
+		
+        <div id = "center">
+            <a href="http://localhost:<%- portNum%>/">HOME</a>
+        </div>
+        
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>TFT Popularity Vote</title>
+    <link href="/html_webPages/style.css" rel="stylesheet" type="text/css">
+    <style>
+      body {background-color: powderblue;}
+h1   {
+    color: blue;
+    text-align: center;
+}
+
+p    {
+    color: brown;
+}
+
+#joke{
+    border: 3px ridge brown;
+    text-align: center;
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    font-size: large;
+}
+.column {
+    float: left;
+    width: 20%;
+    padding: 5px;
+}
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#rank{
+    font-size: 30px;
+}
+
+#vote{
+    font-size: 40px;
+}
+      </style>
+</head>
+
+<script>
+  function getJoke(){
+  fetch("https://official-joke-api.appspot.com/jokes/programming/random")
+    .then((response) => response.json())
+    .then(([data]) => renderJoke(data));
+  }
+
+  function renderJoke(data) {
+  const setup = document.getElementById("setup");
+  const punchline = document.getElementById("punchline");
+  setup.innerHTML = data.setup;
+  punchline.innerHTML = data.punchline;
+  }
+</script>
+
+<body>
+	<h1>Let's get started with TFT Voting!</h1>
+
+    <h2>Current Top 3 Rankings</h2>
+
+    <p>
+
+      <div class="row">
+        <div class="column">
+            <img
+            src="/photos/TFT_Set8_Urgot.jpg"
+            width="350" height="250"
+            alt="urgot"
+          />
+        </div>
+        <div class="column">
+            <img
+            src="/photos/Syndra.jpg"
+            width="350" height="250"
+            alt="syndra"
+          />
+        </div>
+        <div class="column">
+            <img
+            src="/photos/Garen.jpg"
+            width="350" height="250"
+            alt="Garen"
+          />
+        </div>
+        <div class="column">
+            <ul id = "rank">
+                <li>First Place: Urgot</li>
+                <li>Second Place: Syndra</li>
+                <li>Third Place: Garen</li>
+              </ul>
+        </div>
+      </div>
+      
+    </p>
+
+    <p>
+
+        <div class="row" id = "rank">
+          <div class="column">
+              Urgot
+          </div>
+          <div class="column">
+            Syndra
+          </div>
+          <div class="column">
+              Garen
+          </div>
+
+          <br>
+          <br>
+          <br>
+    <div id = "joke">
+        Before you started, here are some programmer jokes for you 
+        <br>
+        Why programmer? ... cuz only nerds play TFT...
+        <br>
+        <button id = "button" type = "button" onclick="getJoke()">Get Joke</button>
+        <strong><p id = "setup"></p></strong>
+        <strong><p id = "punchline"></p></strong>
+        
+    </div>
+
+    <p>
+        If you are unfamilar with TFT, you can check up this website: <a href="https://tftactics.gg/champions">https://tftactics.gg/champions</a>
+    <br>
+        It has some information that could be helpful for you to recognize the characters!
+    </p>
+      
+    <p id = "vote">
+        <a href = "/vote">Vote Now</a> 
+    </p>
+
+    <p id = "remove">
+      <a href="/remove">Remove All Votes</a>
+  </p>
+
+
+
+
+</body>
+
+</html>

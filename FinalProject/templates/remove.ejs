@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Remove</title>
+
+
+    <style>
+        body {background-color: powderblue;}
+        h1   {
+            color: blue;
+            text-align: center;
+        }
+        p    {color: red;}
+    </style>
+</head>
+
+<script>
+    function userConfirm() {
+        return window.confirm(
+            "Are you sure you want to remove all voters?\n"
+        );
+    }
+</script>
+
+<body>
+    <h1>Removing All Vote Entry</h1>
+
+    <form action="http://localhost:<%- portNum%>/removeProcess" method="post" onsubmit="userConfirm()">
+        <input type="submit" value="Remove all orders" id="submit" />
+    </form>
+    <hr />
+    <a href="http://localhost:<%- portNum%>/">HOME</a>
+</body>
+
+
+
+</html>
